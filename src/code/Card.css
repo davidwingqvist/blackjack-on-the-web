@@ -9,6 +9,7 @@
     align-items: center;
     place-content: center;
     font-family: fantasy;
+    margin: 1dvw 1dvh;
 }
 
 .Card:hover {

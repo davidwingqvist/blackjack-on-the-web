@@ -1,12 +1,38 @@
 import './Player.css'
 import Card from './Card';
+import React, {useState} from 'react';
 
-export default function Player()
+export default function Player(props)
 {
-    let total = 0;
-    let cardsAmount = 0;
+    const [cardsArray, handleCards] = useState([]);
+    let sum = 0;
 
-    return (<div>
-            <Card number={10}/>
-            </div>);
+    function AddCard() 
+    {
+        return Math.floor((Math.random() * 11) + 1);
+    }
+
+    function CheckHand()
+    {
+    }
+
+
+    return (
+            <div>
+            <button onClick={() => {
+                handleCards(
+                    [...cardsArray, AddCard()]
+                    )
+            }}>Draw Card
+            </button>
+            <div className='PlayerHandArea'>
+
+            { 
+                cardsArray.map(card => (
+                    <Card number={card}/>
+                ))
+            }
+            </div>
+            </div>
+            );
 }
