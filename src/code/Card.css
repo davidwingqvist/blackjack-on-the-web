@@ -1,0 +1,26 @@
+
+.Card {
+    display: flex;
+    width: 15dvh;
+    height: 20dvh;
+    background-color: antiquewhite;
+    border-radius: 25%;
+    box-shadow: 0.5dvw 0.5dvh rgb(195, 185, 172);
+    align-items: center;
+    place-content: center;
+    font-family: fantasy;
+}
+
+.Card:hover {
+    background-color: rgb(219, 208, 195);
+}
+
+.Card:active {
+    transform: translate3d(0.25dvw, 0.25dvh, 0);
+    box-shadow: 0.25dvw 0.25dvh rgb(195, 185, 172);
+}
+
+.CardText {
+    font-size: 10dvh;
+    user-select: none;
+}
