@@ -5,4 +5,51 @@
     top: 75dvh;
     width: 100dvw;
     place-content: center;
+    overflow: hidden;
+}
+
+.HandTotalText {
+    position: absolute;
+    font-family:monospace ;
+    font-size: 3dvh;
+    text-align: center;
+    display: grid;
+    width: 100%;
+    top: 40dvh;
+    overflow: hidden;
+    user-select: none;
+}
+
+.GameButtonArea {
+    position: absolute;
+    top: 55%;
+    width: 100dvw;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.GameButton {
+    position: relative;
+    display: grid;
+    width: 20dvh;
+    height: 15dvh;
+    background-color: whitesmoke;
+    text-align: center;
+    place-content: center;
+    box-shadow: 0.5dvw 0.5dvh rgb(195, 185, 172);
+    border-radius: 10%;
+    font-size: 3dvh;
+    margin-left: 5dvh;
+    margin-right: 5dvh;
+    user-select: none;
+}
+
+.GameButton:hover {
+    background-color: rgb(203, 201, 201);
+}
+
+.GameButton:active {
+    transform: translate3d(0.25dvw, 0.25dvh, 0);
+    box-shadow: 0.25dvw 0.25dvh rgb(195, 185, 172);
 }

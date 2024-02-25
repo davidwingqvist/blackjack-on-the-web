@@ -1,0 +1,8 @@
+
+.HouseCardArea {
+    display: flex;
+    position: absolute;
+    width: 100dvw;
+    place-content: center;
+    overflow: hidden;
+}
