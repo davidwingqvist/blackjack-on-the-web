@@ -5,4 +5,16 @@
     width: 100dvw;
     place-content: center;
     overflow: hidden;
+    flex-direction: row;
+}
+
+.HouseHandValueText {
+    font-family: monospace;
+    font-size: 3dvh;
+    text-align: center;
+    display: grid;
+    width: 100%;
+    top: 40dvh;
+    overflow: hidden;
+    user-select: none;
 }

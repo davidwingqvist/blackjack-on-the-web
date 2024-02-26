@@ -1,32 +1,28 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import Card from './Card';
+import './House.css'
 
 export default function House(props)
 {
     const { playerSum, isOver } = props;
-    const [cardsArray, handleCards] = useState([]);
-    const [sum, setSum] = useState(0);
-
-    // Update based update of Call button press
-    useMemo(() => PlayHouseTurn(), [isOver]);
+    const [cardsArray, handleHouseCards] = useState([]);
+    const [houseSum, setHouseSum] = useState(0);
 
 
-    function AddCard() 
+    function AddHouseCard()
     {
         return Math.floor((Math.random() * 11) + 1);
     }
 
-    function PlayHouseTurn()
-    {
-        if(isOver)
-        {
-            handleCards([...cardsArray, AddCard()])
-        }
-    }
+    useEffect(() => {
+        // statement to avoid it running twice on start.
+        if(playerSum != 0 && playerSum != undefined && houseSum < 21)
+            handleHouseCards([...cardsArray, AddHouseCard()]);
+    }, [playerSum])
 
     useEffect(() => {
-        setSum(sum => {
-            sum = 0
+        setHouseSum(sum => {
+                sum = 0
                 cardsArray.forEach(card => {
                     sum += card;
                 })
@@ -36,6 +32,10 @@ export default function House(props)
 
     return (
         <div>
+
+        <text>
+            {houseSum}
+        </text>
 
         <div className='HouseCardArea'>
         {

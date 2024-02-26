@@ -8,7 +8,6 @@ export default function Player(props)
     const [cardsArray, handleCards] = useState([]);
     const [sum, setSum] = useState(0);
     const [isOver, handleOver] = useState(false);
-    let t = 0;
 
     function AddCard() 
     {
