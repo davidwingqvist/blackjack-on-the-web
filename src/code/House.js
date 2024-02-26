@@ -7,6 +7,7 @@ export default function House(props)
     const { playerSum, isOver } = props;
     const [cardsArray, handleHouseCards] = useState([]);
     const [houseSum, setHouseSum] = useState(0);
+    const [stopDraw, handleStopDraw] = useState(false); 
 
 
     function AddHouseCard()
@@ -21,11 +22,25 @@ export default function House(props)
     }, [playerSum])
 
     useEffect(() => {
+        console.log(isOver)
+        if(isOver)
+        {
+            handleHouseCards([...cardsArray, AddHouseCard()])
+        }
+    }, [isOver])
+
+    useEffect(() => {
         setHouseSum(sum => {
                 sum = 0
                 cardsArray.forEach(card => {
                     sum += card;
                 })
+
+                if(sum < 21 && sum > 17)
+                {
+                    handleStopDraw(s => s = true);
+                }
+
                 return sum
             })
     }, [cardsArray])
@@ -33,8 +48,8 @@ export default function House(props)
     return (
         <div>
 
-        <text>
-            {houseSum}
+        <text className='HouseHandValueText'>
+            House Total: {houseSum}
         </text>
 
         <div className='HouseCardArea'>

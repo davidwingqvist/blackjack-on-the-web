@@ -27,6 +27,7 @@ export default function Player(props)
 
     return (
             <div>
+            <House playerSum={sum} isOver={isOver}/>
             <div className='GameButtonArea'>
             <div onClick={() => {
                 if(!isOver)
@@ -56,7 +57,6 @@ export default function Player(props)
                 ))
             }
             </div>
-            <House playerSum={sum} isOver={isOver}/>
             </div>
             );
 }

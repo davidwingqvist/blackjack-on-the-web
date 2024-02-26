@@ -7,7 +7,6 @@ export default function Board()
     return (
         <div className='BoardArea'>
             <Player />
-            <House />
         </div>
     )
 }
