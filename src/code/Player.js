@@ -8,6 +8,7 @@ export default function Player(props)
     const [cardsArray, handleCards] = useState([]);
     const [sum, setSum] = useState(0);
     const [isOver, handleOver] = useState(false);
+    const [isLose, handleLose] = useState(false);
 
     function AddCard() 
     {
@@ -25,12 +26,23 @@ export default function Player(props)
             })
     }, [cardsArray])
 
+    useEffect(() => {
+        handleLose(lose => {
+            if(sum > 21)
+            {
+                return (lose = true);
+            }
+
+            return (lose = false);
+        })
+    }, [sum])
+
     return (
             <div>
             <House playerSum={sum} isOver={isOver}/>
             <div className='GameButtonArea'>
             <div onClick={() => {
-                if(!isOver)
+                if(!isOver && !isLose)
                 {
                 handleCards(
                     [...cardsArray, AddCard()]

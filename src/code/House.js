@@ -18,14 +18,24 @@ export default function House(props)
     useEffect(() => {
         // statement to avoid it running twice on start.
         if(playerSum != 0 && playerSum != undefined && houseSum < 21)
+        {
             handleHouseCards([...cardsArray, AddHouseCard()]);
+        }
     }, [playerSum])
 
     useEffect(() => {
         console.log(isOver)
-        if(isOver)
+        if(isOver && (houseSum < 18))
         {
-            handleHouseCards([...cardsArray, AddHouseCard()])
+            let t = [];
+            let over = houseSum;
+            while(over < 18)
+            {
+                let newCard = AddHouseCard();
+                t.push(newCard);
+                over += newCard;
+            }
+            handleHouseCards([...cardsArray, ...t])
         }
     }, [isOver])
 
