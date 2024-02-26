@@ -4,7 +4,7 @@ import './House.css'
 
 export default function House(props)
 {
-    const { playerSum, isOver } = props;
+    const { playerSum, isOver, isRestart } = props;
     const [cardsArray, handleHouseCards] = useState([]);
     const [houseSum, setHouseSum] = useState(0);
     const [stopDraw, handleStopDraw] = useState(false); 
@@ -29,7 +29,7 @@ export default function House(props)
         {
             let t = [];
             let over = houseSum;
-            while(over < 18)
+            while(over <= playerSum)
             {
                 let newCard = AddHouseCard();
                 t.push(newCard);
@@ -54,6 +54,10 @@ export default function House(props)
                 return sum
             })
     }, [cardsArray])
+
+    useEffect(() => {
+        handleHouseCards(() => []);
+    }, [isRestart])
 
     return (
         <div>

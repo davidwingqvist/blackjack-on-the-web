@@ -9,6 +9,7 @@ export default function Player(props)
     const [sum, setSum] = useState(0);
     const [isOver, handleOver] = useState(false);
     const [isLose, handleLose] = useState(false);
+    const [isRestart, handleRestart] = useState(false);
 
     function AddCard() 
     {
@@ -37,9 +38,16 @@ export default function Player(props)
         })
     }, [sum])
 
+    useEffect(() => {
+        handleCards(() => {return []});
+        handleLose(() => {return false});
+        handleOver(() => {return false});
+        handleRestart(() => {return false});
+    }, [isRestart])
+
     return (
             <div>
-            <House playerSum={sum} isOver={isOver}/>
+            <House playerSum={sum} isOver={isOver} isRestart={isRestart}/>
             <div className='GameButtonArea'>
             <div onClick={() => {
                 if(!isOver && !isLose)
@@ -56,7 +64,13 @@ export default function Player(props)
             }}>
                 Call
             </div>
+            <div className='GameButton' onClick={() => {
+                handleRestart(restart => {return restart = true})
+            }}>
+                End Round
             </div>
+            </div>
+
             <text className='HandTotalText'>
                 Hand Total: {sum}
             </text>

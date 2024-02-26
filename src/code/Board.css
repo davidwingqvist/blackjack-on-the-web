@@ -1,7 +1,14 @@
+@keyframes movingBackground {
+    to {
+        background-position: var(--bg-size) 0;
+    }
+}
 
 .BoardArea {
+    --bg-size: 400%;
     width: 100dvw;
     height: 100dvh;
-    background-color: rgb(9, 72, 9);
+    background: linear-gradient(90deg, rgb(4, 70, 10), rgb(5, 81, 13), rgb(4, 70, 10)) 0 0/var(--bg-size) 100%;
+    animation: movingBackground 9s infinite linear;
     overflow: hidden;
 }
