@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/blackjack-on-the-web/static/css/main.4f3180ce.css",
-    "main.js": "/blackjack-on-the-web/static/js/main.d1cbcf8b.js",
+    "main.js": "/blackjack-on-the-web/static/js/main.c9ece95a.js",
     "static/js/453.153b9bbd.chunk.js": "/blackjack-on-the-web/static/js/453.153b9bbd.chunk.js",
     "index.html": "/blackjack-on-the-web/index.html",
     "main.4f3180ce.css.map": "/blackjack-on-the-web/static/css/main.4f3180ce.css.map",
-    "main.d1cbcf8b.js.map": "/blackjack-on-the-web/static/js/main.d1cbcf8b.js.map",
+    "main.c9ece95a.js.map": "/blackjack-on-the-web/static/js/main.c9ece95a.js.map",
     "453.153b9bbd.chunk.js.map": "/blackjack-on-the-web/static/js/453.153b9bbd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4f3180ce.css",
-    "static/js/main.d1cbcf8b.js"
+    "static/js/main.c9ece95a.js"
   ]
 }
