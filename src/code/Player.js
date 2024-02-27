@@ -57,12 +57,12 @@ export default function Player(props)
                     )
                 }
 
-            }} className='GameButton'>Draw Card
+            }} className='GameButton'>Call
             </div>
             <div className='GameButton' onClick={() => {
                 handleOver(isOver => {return isOver = true})
             }}>
-                Call
+                Hold
             </div>
             <div className='GameButton' onClick={() => {
                 handleRestart(restart => {return restart = true})
